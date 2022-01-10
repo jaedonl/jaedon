@@ -1,0 +1,27 @@
+.banner {
+    padding: 75px 0 0;    
+    text-align: center;
+    
+    .mainName {
+        font-size: 120px;
+        letter-spacing: 5px;
+        font-weight: 200;
+    }
+
+    .profileWrapper {
+        .avatarImg {
+            border-radius: 50%;
+            border: 1px solid #333;
+            background-color: #333;
+            z-index: 999;
+        }
+        .positionTitle {
+            font-weight: 300;
+        }
+        p {
+            color: #999;
+            max-width: 500px;
+            margin: 25px auto 0;            
+        }
+    }
+}

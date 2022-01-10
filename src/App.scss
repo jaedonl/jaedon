@@ -3,7 +3,18 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
     color: #fff;
+    font-weight: 300;
 }
 body {
     background-color: #1a1b1f;
+    
+    .hero {
+        background-image: url('http://localhost:3000/assets/background2.png');
+        background-size: 70%;
+        background-repeat: repeat;        
+    }
+}
+
+h1, h2, h3, h4 {
+    font-weight: 500;    
 }
