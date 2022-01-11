@@ -2,19 +2,29 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    color: #fff;
+    // color: #dbe8d4;
     font-weight: 300;
 }
 body {
-    background-color: #1a1b1f;
+    // background-color: #1a1b1f;
+    background-color: #222733;
+    position: relative;
     
-    .hero {
+    .hero::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;                
         background-image: url('http://localhost:3000/assets/background2.png');
         background-size: 70%;
-        background-repeat: repeat;        
+        background-repeat: repeat;     
+        opacity: 0.4;   
     }
 }
 
-h1, h2, h3, h4 {
-    font-weight: 500;    
+h1, h2, h3, h4, p, span, a, button, div {
+    font-weight: 400;
+    color: #dbe8d4;    
 }
