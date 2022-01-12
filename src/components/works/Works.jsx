@@ -9,8 +9,8 @@ const Works = () => {
            <h2 className="sectionTitle">Portfolio</h2>
 
            <div className="worksContainer"> 
-                {mainThumbs.map(item => (
-                    <div className="work">
+                {mainThumbs.map((item, idx) => (
+                    <div className="work" key={idx}>
                         <div className="workThumbContainer">
                             <img src={item.img} alt="" className="workThumb" />
                         </div>

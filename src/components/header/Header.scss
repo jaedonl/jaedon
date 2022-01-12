@@ -15,14 +15,19 @@
         margin: 0 auto;
         
         .logo-container {
-            .logo {
-                font-size: 30px;
-            }
+            a {
+                text-decoration: none;
+                .logo {
+                    font-size: 30px;
+                }
+            }            
         }
     
         .nav-ul {
             display: flex;
             align-items: center;
+
+
     
             .nav-li {
                 display: flex;
@@ -31,6 +36,12 @@
                 font-size: 14px;
                 list-style: none;
                 cursor: pointer;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    text-decoration: none;
+                }
 
                 span {
                     margin-left: 3px;

@@ -6,8 +6,8 @@
     font-weight: 300;
 }
 body {
-    // background-color: #1a1b1f;
-    background-color: #222733;
+    background-color: #1a1b1f;
+    // background-color: #222733;
     position: relative;
     
     .hero::before {
@@ -17,7 +17,7 @@ body {
         width: 100%;
         top: 0;
         left: 0;                
-        background-image: url('http://localhost:3000/assets/background2.png');
+        // background-image: url('http://localhost:3000/assets/background2.png'); 
         background-size: 70%;
         background-repeat: repeat;     
         opacity: 0.4;   
