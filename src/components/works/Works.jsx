@@ -1,26 +1,33 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import './Works.scss';
-import { mainThumbs } from '../../data';
+import { workData } from '../../data';
 
-const Works = () => {    
+const Works = () => {
     return (
-        <div className="works">
-            
+        <div className="works">            
            <h2 className="sectionTitle">Portfolio</h2>
-
            <div className="worksContainer"> 
-                {mainThumbs.map((item, idx) => (
-                    <div className="work" key={idx}>
-                        <div className="workThumbContainer">
-                            <img src={item.img} alt="" className="workThumb" />
-                        </div>
-                        <h3 className="workTitle">{item.title}</h3>
-                        <p className="workSubText">{item.desc}</p>
-                    </div>
-                ))}                
+                { 
+                    workData.map((item, idx) => (
+                        <Link to={`/works/${ Object.keys(item) }`}>                    
+
+                            <div className="work" key={idx}>
+                                <div className="workThumbContainer">
+                                    <img src={ item[Object.keys(item)][0].img } alt="" className="workThumb" />
+                                </div>
+
+                                <h3 className="workTitle">{ item[Object.keys(item)][0].title }</h3>
+                                <p className="workSubText">{ item[Object.keys(item)][0].info }</p>
+                            </div>
+
+                        </Link>
+                    )) 
+                }                
            </div>     
         </div>
     )
 }
 
 export default Works
+ 
