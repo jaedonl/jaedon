@@ -2,4 +2,51 @@
     padding: 155px 50px 0;
     max-width: 1300px;
     margin: 0 auto;
+
+    .workhead {                
+        h1 {
+            font-size: 60px;
+            font-weight: 300;
+            text-align: center;
+        }
+        .tagAndAuthor {
+            text-align: center;
+            span {
+                font-weight: 300;
+                color: #999;
+            }            
+            .projectTags {   
+                margin-right: 100px;
+            }
+        }
+    }
+
+    .workInfo {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 50px;
+        margin-top: 50px;
+        
+        .workMainImg {            
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+
+    .workGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 50px;
+        margin-top: 50px;
+
+        .workItem {
+            // width: 50%;
+            // height: auto;
+            img {
+                max-width: 100%;                            
+                object-fit: cover;
+            }
+        }
+    }
 }

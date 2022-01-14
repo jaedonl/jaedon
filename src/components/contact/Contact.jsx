@@ -32,54 +32,59 @@ const Contact = () => {
 
     return (
         <div className="contact">            
-            <h2 className="sectionTitle">Contact</h2>
-            <div className="contactGrid">
-                <div className="contactLeft">
-                    <div className="contactInfo">
-                        <h2 className="contactTitle">Looking for more information? <br/>
-                            Here are more Links</h2>                     
-                        <ul className="linkList">
-                            <li className="linkItem">
-                                <LinkedIn style={{ fontSize: 40, color: '#0077b5' }} />
-                                <a href="https://www.linkedin.com/in/jaedon-lee-1793aa175/">LinkedIn</a>
-                            </li>
-                            <li className="linkItem">
-                                <GitHub style={{ fontSize: 40, color: '#6e5494' }} />
-                                <a href="https://github.com/jaedonl">GitHub</a>
-                            </li>                      
-                            <li className="linkItem">
-                                <Email style={{ fontSize: 40, color: '#c9510c' }} />
-                                <a href = "mailto:jyjd6404@hotmail.com?subject = Feedback&body = Message">jyjd6404@hotmail.com</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>                
-                
-                <div className="contactRight">
-                    <h2 className="contactTitle">Get in touch.<br/>
-                    I'm always available.</h2>  
+            <div className="contactTop">
+                <h2 className="sectionTitle">Contact</h2>
+                <div className="contactGrid">
+                    <div className="contactLeft">
+                        <div className="contactInfo">
+                            <h2 className="contactTitle">Looking for more information? <br/>
+                                Here are more Links</h2>                     
+                            <ul className="linkList">
+                                <li className="linkItem">
+                                    <LinkedIn style={{ fontSize: 40, color: '#0077b5' }} />
+                                    <a href="https://www.linkedin.com/in/jaedon-lee-1793aa175/">LinkedIn</a>
+                                </li>
+                                <li className="linkItem">
+                                    <GitHub style={{ fontSize: 40, color: '#6e5494' }} />
+                                    <a href="https://github.com/jaedonl">GitHub</a>
+                                </li>                      
+                                <li className="linkItem">
+                                    <Email style={{ fontSize: 40, color: '#c9510c' }} />
+                                    <a href = "mailto:jyjd6404@hotmail.com?subject = Feedback&body = Message">jyjd6404@hotmail.com</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>                
                     
-                    <form className="contactForm" ref={formRef} onSubmit={handleSubmit}>
-                        <label>Name</label>
-                        <input type="text" placeholder="Name" name="user_name" />
+                    <div className="contactRight">
+                        <h2 className="contactTitle">Get in touch.<br/>
+                        I'm always available.</h2>  
                         
-                        <label>Subject</label>
-                        <input type="text" placeholder="Subject" name="user_subject" />
+                        <form className="contactForm" ref={formRef} onSubmit={handleSubmit}>
+                            <label>Name</label>
+                            <input type="text" placeholder="Name" name="user_name" />
+                            
+                            <label>Subject</label>
+                            <input type="text" placeholder="Subject" name="user_subject" />
 
-                        <label>Email</label>
-                        <input type="email" placeholder="Email" name="user_email" />
+                            <label>Email</label>
+                            <input type="email" placeholder="Email" name="user_email" />
 
-                        <label>Message</label>
-                        <textarea type="text" rows="5" placeholder="Message" name="message" />
+                            <label>Message</label>
+                            <textarea type="text" rows="5" placeholder="Message" name="message" />
 
-                        <button className="contactSubmit">SUBMIT</button>          
+                            <button className="contactSubmit">SUBMIT</button>          
 
-                        { done && <span>Thank you for submit. Message is successfully sent!</span> }                                  
-                    </form>       
+                            { done && <span>Thank you for submit. Message is successfully sent!</span> }                                  
+                        </form>       
+                    </div>
+                    
                 </div>
-                
             </div>
 
+            <div className="contactBottom">
+                <p>© Copyright 2022 by Jaedon Lee</p>
+            </div>
         </div>
     )
 }

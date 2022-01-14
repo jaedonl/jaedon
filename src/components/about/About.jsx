@@ -5,7 +5,7 @@ const About = () => {
 
     return (
         <div className="about">
-            <h1 className="myNameIs">Hello, My name is</h1>
+            <h1 className="myNameIs">Hello, my name is</h1>
             <h1 className="mainName">Jaedon Lee</h1>
             <div className="profileWrapper">
                 <img src="/assets/jaedonAvatar.png" alt="Jaedon Avatar" className="avatarImg" />

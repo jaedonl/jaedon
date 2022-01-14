@@ -18,19 +18,15 @@ const Header = () => {
         scrollToTarget()          
     }, [current])    
 
-    const handleNavigation = useCallback((e) => {
-        if (y > window.scrollY) {
-            // console.log("scrolling up", y);
-            document.querySelector('.header').style.top = '0'
+    const handleNavigation = useCallback(() => {
+        y > window.scrollY  ? document.querySelector('.header').style.top = '0' //scrolling up
+                            : document.querySelector('.header').style.top = '-80px' //scrolling down
 
-        } else if (y < window.scrollY) {
-            // console.log("scrolling down", y);
-            document.querySelector('.header').style.top = '-80px'
-
-        }
+        y < 66  ? document.querySelector('.header').style.backgroundColor = 'transparent'
+                : document.querySelector('.header').style.backgroundColor = 'rgba(26,27,31, 0.5)'
+        
         setY(window.scrollY)
     }, [y]);
-
 
     useEffect(() => {
         window.addEventListener("scroll", handleNavigation);
@@ -38,20 +34,7 @@ const Header = () => {
           window.removeEventListener("scroll", handleNavigation);
         };
     }, [handleNavigation]);
-
-    // var lastScrollTop = 0;
-    // window.addEventListener("scroll", function() {
-    //     var st = window.pageYOffset  || document.documentElement.scrollTop;
-        
-    //     if (st > lastScrollTop){
-    //         console.log('scroll down', lastScrollTop, st);
-
-    //     } else if (st < lastScrollTop) {
-    //         console.log('scroll up', lastScrollTop, st);
-    //     }
-
-    //     lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-    // }, false);
+    
 
     return (
         <div className="header">
@@ -91,12 +74,12 @@ const Header = () => {
                     
 
                     <li className="nav-li">
-                        <a href="https://www.linkedin.com/in/jaedon-lee-1793aa175/"><LinkedIn style={{ color: '#0077b5' }}/>
+                        <a href="https://www.linkedin.com/in/jaedon-lee-1793aa175/" target="_blank"><LinkedIn style={{ color: '#0077b5' }}/>
                         <span>LinkedIn</span></a>
                     </li>
 
                     <li className="nav-li">
-                        <a href="https://github.com/jaedonl"><GitHub style={{ color: '#6e5494' }}/>
+                        <a href="https://github.com/jaedonl" target="_blank"><GitHub style={{ color: '#6e5494' }}/>
                         <span>GitHub</span></a>
                     </li>                    
                 </ul>
