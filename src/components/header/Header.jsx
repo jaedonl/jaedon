@@ -1,11 +1,12 @@
 import React, {useState, useEffect, useCallback} from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import './Header.scss';
 import { Person, Computer, GitHub, LinkedIn, Email} from '@material-ui/icons';
 
 const Header = () => {
     const [current, setCurrent] = useState(null)
     const [y, setY] = useState(window.pageYOffset || document.documentElement.scrollTop);
+    const location = useLocation()
     let curTarget    
             
     const scrollToTarget = () => {        
@@ -16,12 +17,16 @@ const Header = () => {
     }
     useEffect(() => {                     
         scrollToTarget()          
-    }, [current])    
+    }, [current])
+    
+    useEffect(() => {        
+        setCurrent(null)
+    }, [location])
 
     const handleNavigation = useCallback(() => {
         y > window.scrollY  ? document.querySelector('.header').style.top = '0' //scrolling up
                             : document.querySelector('.header').style.top = '-80px' //scrolling down
-
+                            
         y < 66  ? document.querySelector('.header').style.backgroundColor = 'transparent'
                 : document.querySelector('.header').style.backgroundColor = 'rgba(26,27,31, 0.5)'
         

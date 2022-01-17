@@ -50,7 +50,7 @@ const Contact = () => {
                                 </li>                      
                                 <li className="linkItem">
                                     <Email style={{ fontSize: 40, color: '#c9510c' }} />
-                                    <a href = "mailto:jyjd6404@hotmail.com?subject = Feedback&body = Message">jyjd6404@hotmail.com</a>
+                                    <a href = "mailto:jyjd6404@hotmail.com?subject = Feedback&body = Message">jyjd6404@gmail.com</a>
                                 </li>
                             </ul>
                         </div>

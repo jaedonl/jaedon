@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import './Works.scss';
-import { workData, testData } from '../../data';
+import { workData } from '../../data';
 
 const Works = () => {
     return (
@@ -9,20 +9,21 @@ const Works = () => {
            <h2 className="sectionTitle">Portfolio</h2>
            <div className="worksContainer"> 
                 {                     
-                    workData.map((item, idx) => (                        
-                        <Link to={`/works/${ item[Object.keys(item)][0].handle }`} key={idx}>                    
+                    workData.map((item, idx) => {                 
+                        var project = item[Object.keys(item)][0]
 
+                        return  <Link to={`/works/${ project.handle }`} key={idx}>                    
                             <div className="work" >
                                 <div className="workThumbContainer">
                                     <img src={ item[Object.keys(item)][1].projects[0].img } alt="" className="workThumb" />
                                 </div>
 
-                                <h3 className="workTitle">{ item[Object.keys(item)][1].projects[0].title  }</h3>
-                                <p className="workSubText">{ item[Object.keys(item)][1].projects[0].info }</p>
+                                <h3 className="workTitle">{ project.title  }</h3>
+                                <p className="workSubText">{ project.info }</p>
                             </div>
-
                         </Link>
-                    )) 
+                        
+                    }) 
                 }                
            </div>     
         </div>
