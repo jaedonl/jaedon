@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { useParams} from 'react-router-dom'
+import { useParams, useLocation } from 'react-router-dom'
 import './WorkDetail.scss'
 import { workData } from '../../data'
 import { LinkedIn, GitHub, Email, ArrowForward, ArrowBack } from '@material-ui/icons';
@@ -7,17 +7,33 @@ import { LinkedIn, GitHub, Email, ArrowForward, ArrowBack } from '@material-ui/i
 const WorkDetail = () => {
     const [scrollTo, setScrollTo] = useState(false)
     const workParam = useParams().title
-    const work = workData.find(item => Object.keys(item)[0] === workParam)[workParam]
-    const projects = work[1].projects
-    let images
+    const location = useLocation()    
+    const work = workData.find((item) => Object.keys(item)[0] === workParam)[workParam]   
+    const projects = work[1].projects 
 
-    images = projects.filter((element,idx) => idx > 0 )    
+    const workIndex = workData.findIndex((item) => Object.keys(item)[0] === workParam) 
+
+    const prevWorkIndex = workIndex - 1
+    const nextWorkIndex = workIndex + 1
+    const prevWork = workData[prevWorkIndex]
+    const nextWork = workData[nextWorkIndex]
     
-    let curTarget    
-            
+    console.log(workIndex, prevWorkIndex, nextWorkIndex);
+
+    console.log(prevWork, nextWork);
+
+    useEffect(() => {        
+        
+    }, [])
+    
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location])
+    
     const scrollToTarget = () => {        
         if (scrollTo) {
-            curTarget = document.querySelector('.moreWorks')
+            let curTarget = document.querySelector('.moreWorks')
             window.scrollTo({ top: curTarget.offsetTop, left: 0, behavior: 'smooth'})  
         }         
         setScrollTo(false)
