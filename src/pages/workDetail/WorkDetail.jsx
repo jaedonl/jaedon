@@ -8,8 +8,9 @@ const WorkDetail = () => {
     const workParam = useParams().title
     const work = workData.find(item => Object.keys(item)[0] === workParam)[workParam]
     const projects = work[1].projects
-    let images    
+    let images, sqImages
     images = projects.filter((element,idx) => idx > 0 )    
+
 
     return (
         <div className="workDetail">
@@ -34,7 +35,9 @@ const WorkDetail = () => {
             <div className="workGrid">
                 { images.map(element => (
                     <div className="workItem">
-                        <img src={element.img} alt="" />
+                        <div className="imageWrapper">
+                            <img src={element.img} alt="" />
+                        </div>                        
                         <p>{element.part}</p>
                     </div>
                 ))}

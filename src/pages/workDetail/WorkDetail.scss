@@ -40,12 +40,33 @@
         column-gap: 50px;
         margin-top: 50px;
 
-        .workItem {
-            // width: 50%;
-            // height: auto;
-            img {
-                max-width: 100%;                            
-                object-fit: cover;
+        .workItem {            
+            .imageWrapper {
+                width: 100%;
+                background: rgba(255, 255, 255, 0.3); 
+                img {
+                    max-width: 100%;                            
+                    object-fit: cover;
+                }
+            }            
+        }
+    }
+
+    .workFooter {        
+        margin: 75px;
+        .linkList {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .linkItem {
+                display: flex;
+                align-items: center;
+                margin: 0 25px;
+
+                a {
+                    margin-left: 5px;
+                }
             }
         }
     }

@@ -43,14 +43,16 @@ export const workData = [
                         img: "/assets/projects/ss5.png",
                         title: "Saturday Skin",
                         info: "Shopify Ecommerce Store",
-                        part: "Mini game main",                
+                        part: "Mini game main",
+                        ratio: true,
                     },
                     {
                         id: 6,
                         img: "/assets/projects/ss6.png",
                         title: "Saturday Skin",
                         info: "Shopify Ecommerce Store",
-                        part: "Mini game ingame",                
+                        part: "Mini game ingame", 
+                        ratio: true,               
                     },
                 ],
             }
