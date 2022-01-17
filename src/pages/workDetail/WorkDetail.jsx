@@ -9,7 +9,9 @@ const WorkDetail = () => {
     const work = workData.find(item => Object.keys(item)[0] === workParam)[workParam]
     const projects = work[1].projects
     let images, sqImages
+
     images = projects.filter((element,idx) => idx > 0 )    
+    
 
 
     return (
