@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { useParams, useLocation } from 'react-router-dom'
+import { Link, useParams, useLocation } from 'react-router-dom'
 import './WorkDetail.scss'
 import { workData } from '../../data'
 import { LinkedIn, GitHub, Email, ArrowForward, ArrowBack } from '@material-ui/icons';
@@ -10,27 +10,27 @@ const WorkDetail = () => {
     const location = useLocation()    
     const work = workData.find((item) => Object.keys(item)[0] === workParam)[workParam]   
     const projects = work[1].projects 
-
     const workIndex = workData.findIndex((item) => Object.keys(item)[0] === workParam) 
+    const [current, setCurrent] = useState(workIndex)
+    const [prevIndex, setPrevIndex] = useState(() => {     
+        let initialState
+        if (current === 0) initialState = 4
+        else initialState = current - 1
 
-    const prevWorkIndex = workIndex - 1
-    const nextWorkIndex = workIndex + 1
-    const prevWork = workData[prevWorkIndex]
-    const nextWork = workData[nextWorkIndex]
+        return initialState
+    })
+    const [nextIndex, setNextIndex] = useState(() => {
+        let initialState
+        if (current === workData.length - 1) initialState = 0
+        else initialState = current + 1
+
+        return initialState
+    })
     
-    console.log(workIndex, prevWorkIndex, nextWorkIndex);
-
-    console.log(prevWork, nextWork);
-
-    useEffect(() => {        
-        
-    }, [])
-    
-
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [location])
-    
+
     const scrollToTarget = () => {        
         if (scrollTo) {
             let curTarget = document.querySelector('.moreWorks')
@@ -38,15 +38,45 @@ const WorkDetail = () => {
         }         
         setScrollTo(false)
     }
-
+    
     useEffect(() => {                     
         scrollToTarget()          
     }, [scrollTo])  
+    
+    const prevNextProject = (e) => {
+        if (e.currentTarget.name === "next") {
+            setCurrent(current+1)
+            setPrevIndex(current)
+            setNextIndex(current+2)
 
+            if (current === workData.length - 1) {
+                setCurrent(0)
+                setPrevIndex(workData.length - 1)
+                setNextIndex(1)
+            } 
+            else if (nextIndex === workData.length - 1) {
+                setCurrent(workData.length - 1)
+                setPrevIndex(workData.length - 2)
+                setNextIndex(0)
+            }
+        }
+        else {
+            setCurrent(current-1)   
+            setPrevIndex(current-2)
+            setNextIndex(current)
 
-    const prevNextProject = () => {
-
-    }
+            if (current === 0) {
+                setCurrent(workData.length - 1)
+                setPrevIndex(workData.length -2)
+                setNextIndex(0)             
+            } 
+            else if (prevIndex === 0) {
+                setCurrent(0)
+                setPrevIndex(workData.length - 1)
+                setNextIndex(1)
+            }
+        }     
+    }   
 
     return (
         <div className="workDetail">
@@ -61,10 +91,10 @@ const WorkDetail = () => {
                         </div>
                     </div>  
 
-                    <button className="nextProject" name="next" onClick={prevNextProject}>
-                        <h1>Next Project</h1> 
-                        <ArrowForward style={{ fontSize: 35 }} />
-                    </button>                  
+                    <Link to={`/works/${Object.keys(workData[nextIndex])[0]}`} className="nextProject" name="next" onClick={prevNextProject}>
+                        <h3>Next Project</h3> 
+                        <ArrowForward style={{ fontSize: 30 }} />
+                    </Link>                  
                 </div>
 
                 <div className="workInfo">
@@ -94,15 +124,15 @@ const WorkDetail = () => {
             </div>
 
             <div className="prevNextProject">
-                <button className="prevProject" name="prev" onClick={prevNextProject}>                    
-                    <ArrowBack style={{ fontSize: 35 }} />
-                    <h1>Previous Project</h1> 
-                </button>       
+                <Link to={`/works/${Object.keys(workData[prevIndex])[0]}`} className="prevProject" name="prev" onClick={prevNextProject}>
+                    <ArrowBack style={{ fontSize: 30 }} />
+                    <h3>Previous Project</h3> 
+                </Link>       
 
-                <button className="nextProject" name="next"  onClick={prevNextProject}>
-                    <h1>Next Project</h1> 
-                    <ArrowForward style={{ fontSize: 35 }} />
-                </button>                      
+                <Link to={`/works/${Object.keys(workData[nextIndex])[0]}`} className="nextProject" name="next"  onClick={prevNextProject}>
+                    <h3>Next Project</h3> 
+                    <ArrowForward style={{ fontSize: 30 }} />
+                </Link>                      
             </div>
             
 

@@ -41,6 +41,7 @@
                 display: flex;
                 align-items: center;
                 cursor: pointer;
+                font-size: 20px;
                 h2 {
                     margin-right: 5px;
                 }
@@ -153,7 +154,7 @@
     
 
     .workFooter {        
-        margin: 75px;
+        margin: 75px 0 25px;
         .linkList {
             display: flex;
             justify-content: center;
