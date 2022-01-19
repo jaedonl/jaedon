@@ -1,17 +1,18 @@
 import React, {useState, useEffect} from 'react'
+import WorkModal from '../../components/workModal/WorkModal'
 import { Link, useParams, useLocation } from 'react-router-dom'
 import './WorkDetail.scss'
 import { workData } from '../../data'
-import { LinkedIn, GitHub, Email, ArrowForward, ArrowBack, ArrowDownward } from '@material-ui/icons';
+import { LinkedIn, GitHub, Email, ArrowForward, ArrowBack } from '@material-ui/icons';
 
 const WorkDetail = () => {
-    const [scrollTo, setScrollTo] = useState(false)
     const workParam = useParams().title
     const location = useLocation()    
     const work = workData.find((item) => Object.keys(item)[0] === workParam)[workParam]   
     const projects = work[1].projects 
+    
     const workIndex = workData.findIndex((item) => Object.keys(item)[0] === workParam) 
-    const [current, setCurrent] = useState(workIndex)
+    const [current, setCurrent] = useState(workIndex)    
     const [prevIndex, setPrevIndex] = useState(() => {     
         let initialState
         if (current === 0) initialState = 4
@@ -23,25 +24,20 @@ const WorkDetail = () => {
         let initialState
         if (current === workData.length - 1) initialState = 0
         else initialState = current + 1
-
+        
         return initialState
     })
-    
+    const [modalIndex, setModalIndex] = useState(null)
+    const [isOpen, setIsOpen] = useState(false)
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [location])
 
     const scrollToTarget = () => {        
-        if (scrollTo) {
-            let curTarget = document.querySelector('.moreWorks')
-            window.scrollTo({ top: curTarget.offsetTop, left: 0, behavior: 'smooth'})  
-        }         
-        setScrollTo(false)
+        let curTarget = document.querySelector('.moreWorks')
+        window.scrollTo({ top: curTarget.offsetTop, left: 0, behavior: 'smooth'})  
     }
-
-    useEffect(() => {                     
-        scrollToTarget()          
-    }, [scrollTo])  
     
     const prevNextProject = (e) => {
         if (e.currentTarget.name === "next") {
@@ -78,51 +74,48 @@ const WorkDetail = () => {
         }     
     }   
 
+    const toggleModal = (e) => {
+        setModalIndex(parseInt(e.currentTarget.getAttribute('index')))
+        setIsOpen(!isOpen)
+    }
+
     return (
-        <div className="workDetail">
+        <div className={`workDetail ${ isOpen ? "fullscreen" : ''}`} >
             <div className="workAbout">
-                <div className="workAboutMain">
-                    <div className="workhead">
-                        <div className="currentProject">
-                            <h1>{work[0].title}</h1>
-                            { work[0].inProgress && <span className="inProgress">(In progress..)</span> }
-                            <div className="tagAndAuthor">
-                                <span className="projectTags">{work[0].tags.join(', ')}</span>
-                                <span className="projectAuthor">by {work[0].author}</span>
-                            </div>
-                        </div>  
-
-                        <Link to={`/works/${Object.keys(workData[nextIndex])[0]}`} className="nextProject" name="next" onClick={prevNextProject}>
-                            <h3>Next Project</h3> 
-                            <ArrowForward style={{ fontSize: 30 }} />
-                        </Link>                  
-                    </div>
-
-                    <div className="workInfo">
-                        <div className="workMainImg">
-                            <img src={projects[0].img} alt="" />
+                <div className="workhead">
+                    <div className="currentProject">
+                        <h1>{work[0].title}</h1>
+                        { work[0].inProgress && <span className="inProgress">(In progress..)</span> }
+                        <div className="tagAndAuthor">
+                            <span className="projectTags">{work[0].tags.join(', ')}</span>
+                            <span className="projectAuthor">by {work[0].author}</span>
                         </div>
-
-                        <div className="workDesc">
-                            <p>{work[0].desc}</p>
-                            <button className="moreButton" onClick={()=>setScrollTo(true)}>View More</button>                                                    
-                        </div>
-                    </div>
+                    </div>  
+                    <Link to={`/works/${Object.keys(workData[nextIndex])[0]}`} className="nextProject" name="next" onClick={prevNextProject}>
+                        <h3>Next Project</h3> 
+                        <ArrowForward style={{ fontSize: 30 }} />
+                    </Link>                  
                 </div>
 
-                <div className="aboutArrowDown">
-                    <ArrowDownward style={{fontSize: "80px"}} />
-                </div>
-                
+                <div className="workInfo">
+                    <div className="workMainImg">
+                        <img src={projects[0].img} alt="" />
+                    </div>
+                    <div className="workDesc">
+                        <p>{work[0].desc}</p>
+                        <button className="moreButton" onClick={scrollToTarget}>View More</button>                                                    
+                    </div>
+                </div>                
             </div>
 
             <div className="moreWorks">
                 <h1>More works from {work[0].title}</h1>
                 <div className="workGrid">
-                    { projects.map(element => (
-                        <div className="workItem">
+                    { projects.map((element, idx) => (
+                        <div className="workItem" key={idx}>
                             <div className="imageWrapper">
                                 <img src={element.img} alt="" />
+                                <button className="workViewBtn" index={idx} onClick={toggleModal}>View Detail</button>
                             </div>                        
                             <h3 className="projectPartTitle">{element.part}</h3>
                         </div>
@@ -164,6 +157,9 @@ const WorkDetail = () => {
                     <p>© Copyright 2022 by Jaedon Lee</p>
                 </div>
             </div>
+            
+            { isOpen ? <WorkModal title={work[0].title} index={modalIndex} works={projects} toggle={toggleModal} /> : ''}
+            
         </div>
     )
 }

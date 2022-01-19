@@ -42,11 +42,11 @@ const Contact = () => {
                             <ul className="linkList">
                                 <li className="linkItem">
                                     <LinkedIn style={{ fontSize: 40, color: '#0077b5' }} />
-                                    <a href="https://www.linkedin.com/in/jaedon-lee-1793aa175/">LinkedIn</a>
+                                    <a href="https://www.linkedin.com/in/jaedon-lee-1793aa175/" target="_blank">LinkedIn</a>
                                 </li>
                                 <li className="linkItem">
                                     <GitHub style={{ fontSize: 40, color: '#6e5494' }} />
-                                    <a href="https://github.com/jaedonl">GitHub</a>
+                                    <a href="https://github.com/jaedonl" target="_blank">GitHub</a>
                                 </li>                      
                                 <li className="linkItem">
                                     <Email style={{ fontSize: 40, color: '#c9510c' }} />
