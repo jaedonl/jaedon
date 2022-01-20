@@ -3,7 +3,7 @@ import './WorkModal.scss'
 import { Close } from '@material-ui/icons';
 import { motion } from 'framer-motion';
 
-const WorkModal = ({title, index, works, toggle, isOpen}) => {
+const WorkModal = ({title, index, works, toggle}) => {
     const [stack, setStack] = useState(index)
     let listItem
 
@@ -41,7 +41,7 @@ const WorkModal = ({title, index, works, toggle, isOpen}) => {
             initial={{opacity: 0}}    
             animate={{opacity: 1}}
             exit={{opacity: 0}}
-            transition={{ delay: .3, type: "spring" }}
+            transition={{ delay: .2, type: "spring" }}
         >
             <div className="modal">
                 <div className="exitBtn" onClick={toggle}><Close className="exitIcon" /></div>

@@ -3,7 +3,7 @@ import './Home.scss';
 import Works from "../../components/works/Works"
 import Contact from '../../components/contact/Contact';
 import About from '../../components/about/About';
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
             initial={{opacity: 0}}    
             animate={{opacity: 1}}
             exit={{opacity: 0}}
-            transition={{ delay: .3, type: "spring" }}
+            transition={{ delay: .3, type: "spring"}}
         >
             <About />
             <Works />            

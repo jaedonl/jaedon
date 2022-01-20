@@ -4,7 +4,8 @@ import { Link, useParams, useLocation } from 'react-router-dom'
 import './WorkDetail.scss'
 import { workData } from '../../data'
 import { LinkedIn, GitHub, Email, ArrowForward, ArrowBack } from '@material-ui/icons';
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
+
 
 
 const WorkDetail = () => {
@@ -13,13 +14,13 @@ const WorkDetail = () => {
     const work = workData.find((item) => Object.keys(item)[0] === workParam)[workParam]   
     const projects = work[1].projects 
     const workIndex = workData.findIndex((item) => Object.keys(item)[0] === workParam) 
-    let modal
     const [current, setCurrent] = useState(workIndex)    
     const [modalIndex, setModalIndex] = useState(null)
     const [isOpen, setIsOpen] = useState(false)
+
     const [prevIndex, setPrevIndex] = useState(() => {     
         let initialState
-        if (current === 0) initialState = 4
+        if (current === 0) initialState = workData.length - 1
         else initialState = current - 1
 
         return initialState
@@ -32,10 +33,10 @@ const WorkDetail = () => {
         return initialState
     })    
 
+    
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [location])
-
 
     const scrollToTarget = () => {        
         let curTarget = document.querySelector('.moreWorks')
@@ -77,22 +78,25 @@ const WorkDetail = () => {
         }     
     }       
     
-
     const toggleModal = (e) => {        
         setModalIndex(parseInt(e.currentTarget.getAttribute('index')))
         setIsOpen(!isOpen)
     }
 
-    return (
-        <motion.div className={`workDetail ${ isOpen ? "fullscreen" : ''}`}
+    return (        
+        <motion.div className="workDetail"         
+            key={workParam}   
             initial={{opacity: 0}}    
             animate={{opacity: 1}}
-            exit={{opacity: 0}}
+            exit={{opacity: 0}}            
             transition={{ delay: .3, type: "spring"}}
         >
-            { isOpen ? <WorkModal title={work[0].title} index={modalIndex} works={projects} 
-            toggle={toggleModal} isOpen={isOpen} /> : ''}
-        
+            <AnimatePresence exitBeforeEnter={true}>
+                { isOpen ?  <WorkModal title={work[0].title} index={modalIndex} works={projects} 
+                                toggle={toggleModal} isOpen={isOpen} /> : ''}
+            </AnimatePresence>
+
+            
             <div className="workAbout">
                 <div className="workhead">
                     <div className="currentProject">

@@ -7,16 +7,13 @@ import WorkDetail from "./pages/workDetail/WorkDetail";
 import { AnimatePresence } from 'framer-motion';
 
 const App = () => {
-  
   return (    
       <div className="app">        
-        <AnimatePresence>          
           <Switch>
             <Header />
             <Route exact path="/" component={Home} />
             <Route path="/works/:title" component={WorkDetail} />
           </Switch>
-        </AnimatePresence>
       </div>
   );
 }
