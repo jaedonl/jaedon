@@ -7,7 +7,7 @@
     width: 100%;
     height: 100%;
     background: #fff;
-    overflow: hidden;    
+    overflow: hidden;        
 
     .modal {
         position: relative;
@@ -20,26 +20,47 @@
             color: #1a1b1f;
             z-index: 9999;
             cursor: pointer;
+            .exitIcon {
+                font-size: 40px;
+            }
         }        
         .prevBtn {
             position: absolute;
-            left: 0;
-            top: 50%;            
+            left: 10px;
+            top: 50%;
+            padding: 15px;            
             transform: translateY(-50%);
             cursor: pointer;             
             color: #1a1b1f;
-            z-index: 9999;
+            z-index: 9999;            
         }
         .nextBtn {
             position: absolute;
-            right: 0;
-            top: 50%;            
+            right: 10px;
+            top: 50%;    
+            padding: 15px;        
             transform: translateY(-50%);
             cursor: pointer;      
             color: #1a1b1f;      
             z-index: 9999;
         }
-        
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 10px;
+            color: #000;
+            pointer-events: none;
+            
+            &.left {
+                transform: rotate(135deg);
+                -webkit-transform: rotate(135deg);
+            }
+            &.right {
+                transform: rotate(-45deg);
+                -webkit-transform: rotate(-45deg);
+            }
+        }
         .workTitle {
             text-align: center;
             padding-top: 25px;
@@ -59,6 +80,7 @@
                 position: absolute;
                 top: 50%;
                 left: calc(50% - 450px);
+                border: 1px solid #eee;
                 .imgWrapper {
                     width: 900px;
                     
@@ -70,7 +92,7 @@
         }
         .orderAndPart {
             position: absolute;
-            bottom: 100px;
+            bottom: 25px;
             text-align: center;
             width: 100%;                        
             transition: all 2s ease;         

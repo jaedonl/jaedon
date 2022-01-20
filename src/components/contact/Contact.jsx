@@ -41,15 +41,15 @@ const Contact = () => {
                                 Here are more Links</h2>                     
                             <ul className="linkList">
                                 <li className="linkItem">
-                                    <LinkedIn style={{ fontSize: 40, color: '#0077b5' }} />
+                                    <LinkedIn className="linkIcons linkedIn" />
                                     <a href="https://www.linkedin.com/in/jaedon-lee-1793aa175/" target="_blank">LinkedIn</a>
                                 </li>
                                 <li className="linkItem">
-                                    <GitHub style={{ fontSize: 40, color: '#6e5494' }} />
+                                    <GitHub className="linkIcons gitHub" />
                                     <a href="https://github.com/jaedonl" target="_blank">GitHub</a>
                                 </li>                      
                                 <li className="linkItem">
-                                    <Email style={{ fontSize: 40, color: '#c9510c' }} />
+                                    <Email className="linkIcons email" />
                                     <a href = "mailto:jyjd6404@hotmail.com?subject = Feedback&body = Message">jyjd6404@gmail.com</a>
                                 </li>
                             </ul>

@@ -35,14 +35,14 @@
                     object-position: top;                                       
                 }
 
-                &:hover {
-                    transform: scale(106%) rotate(1deg);   
-                    background: linear-gradient(to right, yellow, purple);
+                // &:hover {
+                //     transform: scale(106%) rotate(1deg);   
+                //     background: linear-gradient(to right, yellow, purple);
 
-                    .workThumb {
-                        opacity: 0.9;                        
-                    }
-                }
+                //     .workThumb {
+                //         opacity: 0.9;                        
+                //     }
+                // }
             }
             .workTitle {
                 font-size: 20px;
@@ -53,7 +53,23 @@
                 font-size: 16px;
                 font-weight: 300;
                 color: #999;
-            }            
+            }    
+            &:hover {
+                .workThumbContainer {
+                    transform: scale(106%) rotate(1deg);   
+                    background: linear-gradient(to right, yellow, purple);
+        
+                    .workThumb {
+                        opacity: 0.9;                        
+                    }
+                }
+                .workTitle, .workSubText {
+                    text-decoration: underline;
+                }
+                
+            }       
         }
+         
+        
     }
 }

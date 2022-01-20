@@ -37,6 +37,19 @@
                         align-items: center;
                         margin-top: 25px;
                         font-size: 20px;
+
+                        .linkIcons {
+                            font-size: 40px;
+                            &.linkedIn {
+                                color: #0077b5;
+                            }
+                            &.gitHub {
+                                color: #6e5494;
+                            }
+                            &.email {
+                                color: #c9510c;
+                            }
+                        }
     
                         a {
                             margin-left: 3px;

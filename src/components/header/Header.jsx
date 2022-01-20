@@ -54,7 +54,7 @@ const Header = () => {
                     
                     <li className="nav-li" name="about" onClick={(e)=>setCurrent(e.currentTarget.getAttribute('name'))}>
                         <Link to='/' name="about">
-                            <Person style={{ color: '#fff' }}/>
+                            <Person className="linkIcons aboutIcon" />
                             <span>About</span>
                         </Link>
                     </li>
@@ -63,7 +63,7 @@ const Header = () => {
                     
                     <li className="nav-li" name="works" onClick={(e)=>setCurrent(e.currentTarget.getAttribute('name'))}>
                         <Link to='/' name="works">
-                            <Computer style={{ color: '#6cc644' }}/>
+                            <Computer className="linkIcons workIcon" />
                             <span>Works</span>
                         </Link>
                     </li>
@@ -72,19 +72,19 @@ const Header = () => {
                     
                     <li className="nav-li" name="contact" onClick={(e)=>setCurrent(e.currentTarget.getAttribute('name'))}>
                         <Link to='/' name="contact">
-                            <Email style={{ color: '#c9510c' }}/>
+                            <Email className="linkIcons email" />
                             <span>Contact</span>
                         </Link>
                     </li>
                     
 
                     <li className="nav-li">
-                        <a href="https://www.linkedin.com/in/jaedon-lee-1793aa175/" target="_blank"><LinkedIn style={{ color: '#0077b5' }}/>
+                        <a href="https://www.linkedin.com/in/jaedon-lee-1793aa175/" target="_blank"><LinkedIn className="linkIcons linkedIn" />
                         <span>LinkedIn</span></a>
                     </li>
 
                     <li className="nav-li">
-                        <a href="https://github.com/jaedonl" target="_blank"><GitHub style={{ color: '#6e5494' }}/>
+                        <a href="https://github.com/jaedonl" target="_blank"><GitHub className="linkIcons gitHub" />
                         <span>GitHub</span></a>
                     </li>                    
                 </ul>

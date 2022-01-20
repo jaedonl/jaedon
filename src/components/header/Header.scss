@@ -40,6 +40,25 @@
                     display: flex;
                     align-items: center;
                     text-decoration: none;
+
+                    .linkIcons {
+                        font-size: 25px;
+                        &.aboutIcon {
+                            color: #fff;
+                        }
+                        &.workIcon {
+                            color: #6cc644;
+                        }
+                        &.email {
+                            color: #c9510c;
+                        }
+                        &.linkedIn {
+                            color: #0077b5;
+                        }
+                        &.gitHub {
+                            color: #6e5494;
+                        }
+                    }
                 }
 
                 span {

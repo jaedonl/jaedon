@@ -4,15 +4,19 @@ import { Link, useParams, useLocation } from 'react-router-dom'
 import './WorkDetail.scss'
 import { workData } from '../../data'
 import { LinkedIn, GitHub, Email, ArrowForward, ArrowBack } from '@material-ui/icons';
+import { motion } from 'framer-motion'
+
 
 const WorkDetail = () => {
     const workParam = useParams().title
     const location = useLocation()    
     const work = workData.find((item) => Object.keys(item)[0] === workParam)[workParam]   
     const projects = work[1].projects 
-    
     const workIndex = workData.findIndex((item) => Object.keys(item)[0] === workParam) 
+    let modal
     const [current, setCurrent] = useState(workIndex)    
+    const [modalIndex, setModalIndex] = useState(null)
+    const [isOpen, setIsOpen] = useState(false)
     const [prevIndex, setPrevIndex] = useState(() => {     
         let initialState
         if (current === 0) initialState = 4
@@ -26,13 +30,12 @@ const WorkDetail = () => {
         else initialState = current + 1
         
         return initialState
-    })
-    const [modalIndex, setModalIndex] = useState(null)
-    const [isOpen, setIsOpen] = useState(false)
+    })    
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [location])
+
 
     const scrollToTarget = () => {        
         let curTarget = document.querySelector('.moreWorks')
@@ -72,15 +75,24 @@ const WorkDetail = () => {
                 setNextIndex(1)
             }
         }     
-    }   
+    }       
+    
 
-    const toggleModal = (e) => {
+    const toggleModal = (e) => {        
         setModalIndex(parseInt(e.currentTarget.getAttribute('index')))
         setIsOpen(!isOpen)
     }
 
     return (
-        <div className={`workDetail ${ isOpen ? "fullscreen" : ''}`} >
+        <motion.div className={`workDetail ${ isOpen ? "fullscreen" : ''}`}
+            initial={{opacity: 0}}    
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+            transition={{ delay: .3, type: "spring"}}
+        >
+            { isOpen ? <WorkModal title={work[0].title} index={modalIndex} works={projects} 
+            toggle={toggleModal} isOpen={isOpen} /> : ''}
+        
             <div className="workAbout">
                 <div className="workhead">
                     <div className="currentProject">
@@ -140,15 +152,15 @@ const WorkDetail = () => {
             <div className="workFooter">
                 <ul className="linkList">
                     <li className="linkItem">
-                        <LinkedIn style={{ fontSize: 40, color: '#0077b5' }} />
+                        <LinkedIn className="linkIcons linkedIn" />
                         <a href="https://www.linkedin.com/in/jaedon-lee-1793aa175/">LinkedIn</a>
                     </li>
                     <li className="linkItem">
-                        <GitHub style={{ fontSize: 40, color: '#6e5494' }} />
+                        <GitHub className="linkIcons gitHub" />
                         <a href="https://github.com/jaedonl">GitHub</a>
                     </li>                      
                     <li className="linkItem">
-                        <Email style={{ fontSize: 40, color: '#c9510c' }} />
+                        <Email className="linkIcons email" />
                         <a href = "mailto:jyjd6404@hotmail.com?subject = Feedback&body = Message">Email</a>
                     </li>
                 </ul>
@@ -156,11 +168,9 @@ const WorkDetail = () => {
                 <div className="workFooterCopyright">
                     <p>© Copyright 2022 by Jaedon Lee</p>
                 </div>
-            </div>
+            </div>                    
             
-            { isOpen ? <WorkModal title={work[0].title} index={modalIndex} works={projects} toggle={toggleModal} /> : ''}
-            
-        </div>
+        </motion.div>
     )
 }
 

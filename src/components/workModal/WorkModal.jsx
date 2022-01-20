@@ -1,25 +1,30 @@
 import React, {useState, useEffect} from 'react'
 import './WorkModal.scss'
 import { Close } from '@material-ui/icons';
+import { motion } from 'framer-motion';
 
-
-const WorkModal = ({title, index, works, toggle}) => {
+const WorkModal = ({title, index, works, toggle, isOpen}) => {
     const [stack, setStack] = useState(index)
     let listItem
 
-    useEffect(() => {
-        listItem = document.querySelectorAll('.workList li')    
-
+    useEffect(() => {        
+        listItem = document.querySelectorAll('.workList li')            
         listItem.forEach((element,idx) => {
             element.style.transform = `translate3d(${100 * idx}vw, -50%, 0)`            
         });
     }, [])    
 
     const changeStack = (e) => {        
-        var direction = e.target.getAttribute('name')
+        var direction = e.target.getAttribute('name') 
 
-        if (direction === "next") setStack(stack+1)
-        else setStack(stack-1)        
+        if (direction === "next") {
+            setStack(stack+1)            
+            if (stack === works.length - 1) setStack(0)
+        }
+        else {
+            setStack(stack-1)  
+            if (stack === 0) setStack(works.length - 1)                          
+        }
     }   
 
     const changeIndex = () => {        
@@ -32,11 +37,16 @@ const WorkModal = ({title, index, works, toggle}) => {
     }, [stack])
 
     return (
-        <div className="workModal">
+        <motion.div className="workModal"
+            initial={{opacity: 0}}    
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+            transition={{ delay: .3, type: "spring" }}
+        >
             <div className="modal">
-                <div className="exitBtn" onClick={toggle}><Close style={{fontSize: "50px"}} /></div>
-                <div className="prevBtn" name="prev" onClick={changeStack}>prev</div>
-                <div className="nextBtn" name="next" onClick={changeStack}>next</div>
+                <div className="exitBtn" onClick={toggle}><Close className="exitIcon" /></div>
+                <div className="prevBtn" name="prev" onClick={changeStack}><i class="arrow left"></i></div>
+                <div className="nextBtn" name="next" onClick={changeStack}><i class="arrow right"></i></div>
 
                 <div className="workTitle">
                     <h2>{title}</h2>
@@ -56,7 +66,7 @@ const WorkModal = ({title, index, works, toggle}) => {
                 </div>  
                                
             </div>
-        </div>
+        </motion.div>
     )
 }
 
