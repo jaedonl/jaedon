@@ -35,29 +35,8 @@ const Contact = () => {
             <div className="contactTop">
                 <h2 className="sectionTitle">Contact</h2>
                 <div className="contactGrid">
-                    <div className="contactLeft">
-                        <div className="contactInfo">
-                            <h2 className="contactTitle">Looking for more information? <br/>
-                                Here are more Links</h2>                     
-                            <ul className="linkList">
-                                <li className="linkItem">
-                                    <LinkedIn className="linkIcons linkedIn" />
-                                    <a href="https://www.linkedin.com/in/jaedon-lee-1793aa175/" target="_blank">LinkedIn</a>
-                                </li>
-                                <li className="linkItem">
-                                    <GitHub className="linkIcons gitHub" />
-                                    <a href="https://github.com/jaedonl" target="_blank">GitHub</a>
-                                </li>                      
-                                <li className="linkItem">
-                                    <Email className="linkIcons email" />
-                                    <a href = "mailto:jyjd6404@hotmail.com?subject = Feedback&body = Message">jyjd6404@gmail.com</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>                
-                    
-                    <div className="contactRight">
-                        <h2 className="contactTitle">Get in touch.<br/>
+                    <div className="contactFormContainer">
+                        <h2 className="contactFormTitle">Get in touch.<br/>
                         I'm always available.</h2>  
                         
                         <form className="contactForm" ref={formRef} onSubmit={handleSubmit}>
@@ -78,6 +57,27 @@ const Contact = () => {
                             { done && <span>Thank you for submit. Message is successfully sent!</span> }                                  
                         </form>       
                     </div>
+
+                    <div className="contactMoreLinks">
+                        <div className="contactInfo">
+                            <h2 className="moreLinksTitle">Looking for more information? <br/>
+                                Here are more Links</h2>                     
+                            <ul className="linkList">
+                                <li className="linkItem">
+                                    <LinkedIn className="linkIcons linkedIn" />
+                                    <a href="https://www.linkedin.com/in/jaedon-lee-1793aa175/" target="_blank">LinkedIn</a>
+                                </li>
+                                <li className="linkItem">
+                                    <GitHub className="linkIcons gitHub" />
+                                    <a href="https://github.com/jaedonl" target="_blank">GitHub</a>
+                                </li>                      
+                                <li className="linkItem">
+                                    <Email className="linkIcons email" />
+                                    <a href = "mailto:jyjd6404@hotmail.com?subject = Feedback&body = Message">jyjd6404@gmail.com</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>                                    
                     
                 </div>
             </div>

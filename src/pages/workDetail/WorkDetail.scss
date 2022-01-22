@@ -1,3 +1,6 @@
+$small: 600px;
+$medium: 900px;
+
 .workDetail {
     padding: 0 50px 0;
     max-width: 1300px;
@@ -221,6 +224,89 @@
         .workFooterCopyright {
             margin-top: 25px;
             text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: $small) {
+    .workDetail {
+        padding: 0 15px;
+
+        .workAbout {
+            padding-top: 100px;
+
+            .workhead {
+                .nextProject {
+                    display: none;
+                }
+                .currentProject {
+                    h1 {
+                        font-size: 38px;
+                    }
+                    .tagAndAuthor {
+                        span {
+                            margin-right: 0;
+                            font-size: 14px;
+                        }
+                    }
+                }   
+            }
+
+            .workInfo {
+                grid-template-columns: 1fr;
+                margin-top: 25px;
+
+                .workDesc {
+                    margin-top: 15px;
+                    p {
+                        font-size: 16px;
+                    }
+                    .moreButton {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .moreWorks {
+            padding-top: 100px;
+            h1 {
+                font-size: 20px;
+            }
+
+            .workGrid {
+                margin-top: 15px;
+                grid-template-columns: 1fr;
+                row-gap: 30px;
+
+                .workItem {
+                    .projectPartTitle {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .prevNextProject {
+            margin-top: 50px;
+
+            .prevProject, .nextProject {
+                h3 {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .workFooter {
+            margin: 50px 0 25px;
+
+            .linkList {
+                display: block;
+
+                .linkItem {
+                    margin: 10px 0;
+                }
+            }
         }
     }
 }

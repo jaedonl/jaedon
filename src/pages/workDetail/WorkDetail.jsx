@@ -142,7 +142,7 @@ const WorkDetail = () => {
             <div className="prevNextProject">
                 <Link to={`/works/${Object.keys(workData[prevIndex])[0]}`} className="prevProject" name="prev" onClick={prevNextProject}>
                     <ArrowBack style={{ fontSize: 30 }} />
-                    <h3>Previous Project</h3> 
+                    <h3>Prev Project</h3> 
                 </Link>       
 
                 <Link to={`/works/${Object.keys(workData[nextIndex])[0]}`} className="nextProject" name="next"  onClick={prevNextProject}>
