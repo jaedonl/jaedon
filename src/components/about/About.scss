@@ -1,5 +1,6 @@
 $small: 600px;
 $medium: 900px;
+$large: 1300px;
 
 .about {    
     text-align: center;    
@@ -84,15 +85,60 @@ $medium: 900px;
     }    
 }
 
-@media screen and (max-width: $small) {
+@media screen and (max-width: $large) {
+    .about {
+        height: auto;
+        padding-top: 150px;   
+    }    
+}
+
+@media screen and (max-width: $medium) {
     .about {    
         height: auto;
-        padding: 100px 15px 0;
+        padding-top: 150px;   
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;    
+        position: relative;
+        max-width: 1300px;
+        margin: 0 auto;
+        // padding: 150px 15px 0;
         .myNameIs {
-            font-size: 20px;
+            font-size: 24px;
         }   
         .mainName {
-            font-size: 48px;
+            font-size: 80px;
+            letter-spacing: 3px;
+        }
+        .profileWrapper {
+            .avatarImg {
+                width: 200px;
+                height: 200px;
+            }
+            .positionTitle {
+                font-size: 28px;
+            }
+            .skills {
+                font-size: 18px;
+            }
+            .aboutMe {
+                font-size: 18px;
+            }
+        }
+    }
+
+}
+@media screen and (max-width: 1300px) and (max-height: $medium) {
+    .about {    
+        height: auto;
+        padding: 125px 15px 0;
+        
+        .myNameIs {
+            font-size: 24px;
+        }   
+        .mainName {
+            font-size: 80px;
             letter-spacing: 3px;
         }
         .profileWrapper {
@@ -101,17 +147,16 @@ $medium: 900px;
                 height: 150px;
             }
             .positionTitle {
-                font-size: 20px;
+                font-size: 24px;
             }
             .skills {
-                font-size: 14px;
+                font-size: 16px;
             }
             .aboutMe {
-                font-size: 14px;
+                font-size: 16px;
             }
         }
-
-    }
+    }    
 }
 
 @media screen and (max-width: $medium) and (max-height: 450px) {
@@ -140,6 +185,35 @@ $medium: 900px;
                 font-size: 14px;
             }
         }
-
     }    
 }
+
+@media screen and (max-width: $small) {
+    .about {    
+        height: auto;
+        padding: 100px 15px 0;
+        .myNameIs {
+            font-size: 20px;
+        }   
+        .mainName {
+            font-size: 48px;
+            letter-spacing: 3px;
+        }
+        .profileWrapper {
+            .avatarImg {
+                width: 150px;
+                height: 150px;
+            }
+            .positionTitle {
+                font-size: 20px;
+            }
+            .skills {
+                font-size: 14px;
+            }
+            .aboutMe {
+                font-size: 14px;
+            }
+        }
+    }
+}
+

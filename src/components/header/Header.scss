@@ -1,5 +1,6 @@
 $small: 600px;
 $medium: 900px;
+$large: 1300px;
 
 .header {
     padding: 10px 50px;    
@@ -72,9 +73,16 @@ $medium: 900px;
 
     }   
 }
+@media screen and (max-width: $large) {
+    .header {
+        padding: 25px 50px;    
+        position: fixed;
+        top: 0;
+        width: calc(100vw - 100px);
+    }
+}
 
-
-@media screen and (max-width: $small) {
+@media screen and (max-width: $medium) {
     .header {
         padding: 25px 25px;
         width: calc(100vw - 50px);
@@ -82,7 +90,7 @@ $medium: 900px;
             .logo-container {
                 a {
                     .logo {
-                        font-size: 18px;                    
+                        font-size: 30px;                    
                     }
                 }            
             }
@@ -91,7 +99,7 @@ $medium: 900px;
                     display: inline-block;    
                     
                     .bar {
-                        width: 18px;
+                        width: 28px;
                         height: 2px;
                         background-color: #dbe8d4;
                         margin: 4px 0;
@@ -137,18 +145,62 @@ $medium: 900px;
                     }     
                     
                     .nav-li {
-                        margin: 15px 0;
-                        font-size: 20px;
+                        margin: 20px 0;
+                        font-size: 28px;
                         min-width: 300px;        
                         a {
                             .linkIcons {    
-                                font-size: 30px;
+                                font-size: 38px;
                                 // min-width: 50px;
                             }
                             span {
                                 margin-left: 5px;
                             }
                         }         
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+@media screen and (max-width: $small) {
+    .header {
+        padding: 25px 25px;
+        width: calc(100vw - 50px);
+        .headerContainer {
+            .logo-container {
+                a {
+                    .logo {
+                        font-size: 20px;                    
+                    }
+                }            
+            }
+            .siteNav {
+                .hamburgerContainer {     
+                    display: inline-block;    
+                    
+                    .bar {
+                        width: 18px;
+                        height: 2px;
+                        background-color: #dbe8d4;
+                        margin: 4px 0;
+                        transition: 0.3s;
+                    }
+                }
+
+                .nav-ul {
+                    .nav-li {
+                        font-size: 20px;
+                        margin: 15px 0;
+
+                        a {
+                            .linkIcons {
+                                font-size: 30px;
+                            }
+                        }
                     }
                 }
             }
@@ -164,5 +216,5 @@ $medium: 900px;
 }
 
 .disableScroll { 
-    overflow: hidden;
+    overflow: hidden !important;
 }

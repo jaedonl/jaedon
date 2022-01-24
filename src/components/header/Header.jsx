@@ -58,6 +58,8 @@ const Header = () => {
             navul.classList.remove('on')
             document.body.classList.remove('disableScroll')
         }            
+
+        
     }, [hamburger])
         
 

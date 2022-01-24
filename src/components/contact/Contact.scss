@@ -1,5 +1,6 @@
 $small: 600px;
 $medium: 900px;
+$large: 1300px;
 
 .contact {
     padding: 0 50px;
@@ -127,24 +128,46 @@ $medium: 900px;
         position: absolute;
         bottom: 25px;
         left: 50%;
-        transform: translateX(-50%)
+        transform: translateX(-50%);
+
+        p {
+            font-size: 12px;   
+        }
     }    
 }
 
-@media screen and (max-width: $small) {
+@media screen and (max-width: $large) {
     .contact {
-        padding: 100px 15px 0;
         height: auto;
+        padding: 150px 50px;
 
         .contactTop {
             .sectionTitle {
-                font-size: 28px;
+                font-size: 42px;
+                text-align: left;
+            }
+
+            .contactGrid {
+                margin-top: 25px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $medium) {
+    .contact {
+        padding: 150px 25px;
+
+        .contactTop {
+            .sectionTitle {
+                font-size: 42px;
                 text-align: left;
             }
         
             .contactGrid {
                 margin-top: 15px;
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 25px;
 
                 .contactFormContainer {
                     .contactFormTitle {
@@ -189,13 +212,18 @@ $medium: 900px;
         }
 
         .contactBottom {
-            position: initial;
-            transform: initial;
-            text-align: center;
-            padding: 15px 0;
-            font-size: 12px;        
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);   
         }
     }
+}
+
+@media screen and (max-width: 1300px) and (max-height: $medium) {
+    .contact {
+        margin: 100px auto 0;
+    }    
 }
 
 @media screen and (max-width: $medium) and (max-height: 450px) {
@@ -265,3 +293,32 @@ $medium: 900px;
         }
     }    
 }
+
+
+@media screen and (max-width: $small) {
+    .contact {
+        padding: 100px 15px 0;
+        height: auto;
+
+        .contactTop {
+            .sectionTitle {
+                font-size: 28px;
+                text-align: left;
+            }
+        
+            .contactGrid {                
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contactBottom {
+            position: initial;
+            transform: initial;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 12px;        
+        }
+    }
+}
+
+
