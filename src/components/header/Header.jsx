@@ -1,8 +1,7 @@
-import React, {useState, useEffect, useCallback} from 'react'
+import React, {useState, useEffect, useCallback, useLayoutEffect} from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import './Header.scss';
 import { Person, Computer, GitHub, LinkedIn, Email} from '@material-ui/icons';
-import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
     const [current, setCurrent] = useState(null)
@@ -21,9 +20,10 @@ const Header = () => {
         scrollToTarget()          
     }, [current])
     
-    useEffect(() => {           
-        setCurrent(null)        
-        window.scrollTo(0, 0);
+    useEffect(() => {                 
+        setCurrent(null)                
+        scrollToTarget()             
+        document.body.style.overflow = "visible"     
     }, [location])
 
 
@@ -59,14 +59,15 @@ const Header = () => {
             document.body.classList.remove('disableScroll')
         }            
     }, [hamburger])
-
-    console.log(hamburger);
-    
+        
 
     return (
         <div className="header">
             <div className="headerContainer">
-                <div className="logo-container">
+                <div className="logo-container" name="about" onClick={(e)=>{
+                                setCurrent(e.currentTarget.getAttribute('name'))
+                                setHamburger(false)
+                            }}>
                     <Link to='/' name="about">
                         <span className="logo">JdonL</span>
                     </Link>

@@ -6,17 +6,19 @@ import { workData } from '../../data'
 import { LinkedIn, GitHub, Email, ArrowForward, ArrowBack } from '@material-ui/icons';
 import { AnimatePresence, motion } from 'framer-motion'
 
-
-
 const WorkDetail = () => {
     const workParam = useParams().title
-    const location = useLocation()    
     const work = workData.find((item) => Object.keys(item)[0] === workParam)[workParam]   
     const projects = work[1].projects 
     const workIndex = workData.findIndex((item) => Object.keys(item)[0] === workParam) 
     const [current, setCurrent] = useState(workIndex)    
     const [modalIndex, setModalIndex] = useState(null)
     const [isOpen, setIsOpen] = useState(false)
+    const location = useLocation()
+    
+    useEffect(() => {
+        window.scrollTo(0, 0);        
+    }, [location])
 
     const [prevIndex, setPrevIndex] = useState(() => {     
         let initialState
@@ -31,12 +33,7 @@ const WorkDetail = () => {
         else initialState = current + 1
         
         return initialState
-    })    
-
-    
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [location])
+    })        
 
     const scrollToTarget = () => {        
         let curTarget = document.querySelector('.moreWorks')

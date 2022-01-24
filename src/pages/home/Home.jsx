@@ -3,7 +3,7 @@ import './Home.scss';
 import Works from "../../components/works/Works"
 import Contact from '../../components/contact/Contact';
 import About from '../../components/about/About';
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 
 const Home = () => {

@@ -45,8 +45,8 @@ const WorkModal = ({title, index, works, toggle}) => {
         >
             <div className="modal">
                 <div className="exitBtn" onClick={toggle}><Close className="exitIcon" /></div>
-                <div className="prevBtn" name="prev" onClick={changeStack}><i class="arrow left"></i></div>
-                <div className="nextBtn" name="next" onClick={changeStack}><i class="arrow right"></i></div>
+                <div className="prevBtn" name="prev" onClick={changeStack}><i className="arrow left"></i></div>
+                <div className="nextBtn" name="next" onClick={changeStack}><i className="arrow right"></i></div>
 
                 <div className="workTitle">
                     <h2>{title}</h2>
