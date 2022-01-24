@@ -6,7 +6,8 @@
 }
 body {
     // background-color: #1a1b1f;
-    background: linear-gradient(to right, #1a1b1f, #2F1136, #541B61);
+    // background: linear-gradient(to right, #1a1b1f, #2F1136, #541B61);
+    background: linear-gradient(to right, #000000, #1a1b1f, #3E3D3D);
     position: relative;
     
     .hero::before {
@@ -19,7 +20,7 @@ body {
         background-size: 70%;
         background-repeat: repeat;     
         opacity: 0.4;   
-    }
+    } 
 }
 
 h1, h2, h3, h4, p, span, a, button, div, ul, li {

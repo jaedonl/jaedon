@@ -15,7 +15,8 @@ const Works = () => {
                         return  <Link to={`/works/${ project.handle }`} key={idx}>                    
                             <div className="work" >
                                 <div className="workThumbContainer">
-                                    <img src={ item[Object.keys(item)][1].projects[0].img } alt="" className="workThumb" />
+                                    <img src={ item[Object.keys(item)][1].projects[0].img } alt="" />
+                                    <button className="workDetailBtn" index={idx}>View Detail</button>
                                 </div>
 
                                 <h3 className="workTitle">{ project.title  }</h3>

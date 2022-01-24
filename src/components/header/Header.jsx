@@ -23,14 +23,16 @@ const Header = () => {
     
     useEffect(() => {           
         setCurrent(null)        
+        window.scrollTo(0, 0);
     }, [location])
+
 
     const handleNavigation = useCallback(() => {
         y > window.scrollY  ? document.querySelector('.header').style.top = '0' //scrolling up
                             : document.querySelector('.header').style.top = '-80px' //scrolling down
 
         y < 66  ? document.querySelector('.header').style.backgroundColor = 'transparent'
-                : document.querySelector('.header').style.backgroundColor = 'rgba(26,27,31, 0.5)'
+                : document.querySelector('.header').style.backgroundColor = 'rgba(26,27,31, 0.4)'
         
         setY(window.scrollY)
     }, [y]);
