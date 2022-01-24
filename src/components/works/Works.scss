@@ -28,8 +28,10 @@ $medium: 900px;
                 height: calc(100% - 100px);
                 position: relative;       
                 border-radius: 5px;         
-                background: #1a1b1f;
+                // background: #1a1b1f;
                 transition: all 0.1s ease;
+                padding-bottom: 3px;
+                padding-right: 3px;
                 
                 .workThumb {
                     width: 100%;  
@@ -92,8 +94,42 @@ $medium: 900px;
                 .workSubText {
                     font-size: 14px;
                 }
+
+                &:hover {
+                    .workThumbContainer {
+                        transform: none;
+                        background: none;
+                        padding-bottom: 0;
+                        padding-right: 0;
+            
+                        .workThumb {
+                            opacity: 1;                       
+                        }
+                    }
+                    .workTitle, .workSubText {
+                        text-decoration: underline;
+                    }
+                    
+                }     
             }
         }
     }
+}
 
+@media screen and (max-width: $medium) and (max-height: 450px) {
+    .works {
+        padding: 100px 25px 0;
+
+        .sectionTitle {
+            font-size: 28px;
+            text-align: left;
+        }
+        .worksContainer {
+            grid-template-columns: 1fr 1fr;
+            column-gap: 25px;
+            row-gap: 25px;
+            margin-top: 10px;
+
+        }
+    }    
 }

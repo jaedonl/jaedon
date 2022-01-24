@@ -83,6 +83,10 @@ const WorkDetail = () => {
         setIsOpen(!isOpen)
     }
 
+    useEffect(() => {
+        isOpen ? document.body.style.overflow = "hidden" : document.body.style.overflow = "visible"
+    }, [isOpen])
+
     return (        
         <motion.div className="workDetail"         
             key={workParam}   

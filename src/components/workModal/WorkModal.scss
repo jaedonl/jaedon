@@ -1,3 +1,6 @@
+$small: 600px;
+$medium: 900px;
+
 .workModal {
     position: fixed;
     top: 0;
@@ -80,10 +83,10 @@
             li {          
                 position: absolute;
                 top: 50%;
-                left: calc(50% - 450px);
+                left: calc(50% - 375px);
                 border: 1px solid #eee;
                 .imgWrapper {
-                    width: 900px;
+                    width: 750px;
                     
                     img {
                         width: 100%;
@@ -96,11 +99,112 @@
             bottom: 25px;
             text-align: center;
             width: 100%;                        
-            transition: all 2s ease;         
             p {
                 color: #1a1b1f;
             }
         }
         
+    }
+}
+
+@media screen and (max-width: $small) {
+    .workModal {
+        .modal {
+            .exitBtn {
+                top: 25px;
+                right: 15px;
+                .exitIcon {
+                    font-size: 30px;
+                }
+            }        
+            .prevBtn {
+                left: 0px;
+                padding: 15px;              
+            }
+            .nextBtn {
+                right: 0px;
+                padding: 15px;        
+            }
+            .arrow {
+                padding: 7px;
+            }
+            .workTitle {
+                text-align: center;
+                padding-top: 25px;          
+                h2 {
+                    font-size: 18px;
+                }      
+            }
+            .workList {                
+                li {                              
+                    left: calc(50% - 150px);
+                    .imgWrapper {
+                        max-width: 300px;
+                        
+                        img {
+                            width: 100%;
+                        }
+                    }                
+                }            
+            }
+            .orderAndPart {
+                bottom: 25px;
+                p {
+                    font-size: 14px;
+                }
+            }
+            
+        }
+    }
+}
+
+@media screen and (max-width: $medium) and (max-height: 450px) {
+    .workModal {
+        .modal {
+            .exitBtn {
+                top: 15px;
+                right: 15px;
+                .exitIcon {
+                    font-size: 28px;
+                }
+            }        
+            .prevBtn {
+                left: 10px;
+                padding: 15px;              
+            }
+            .nextBtn {
+                right: 10px;
+                padding: 15px;        
+            }
+            .arrow {
+                padding: 7px;
+            }
+            .workTitle {
+                text-align: center;
+                padding-top: 15px;          
+                h2 {
+                    font-size: 18px;
+                }      
+            }
+            .workList {                
+                li {                              
+                    left: calc(50% - 160px);
+                    .imgWrapper {
+                        max-width: 320px;
+                        
+                        img {
+                            width: 100%;
+                        }
+                    }                
+                }            
+            }
+            .orderAndPart {
+                bottom: 15px;
+                p {
+                    font-size: 12px;
+                }
+            }
+            
+        }
     }
 }

@@ -8,7 +8,7 @@ export const workData = [
                 author: "Jaedon Lee",
                 inProgress: false,
                 info: "Shopify Ecommerce Store",
-                desc: "Saturday Skin Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellentesque arcu ipsum, eu posuere nulla gravida id. Nulla nec enim a arcu euismod sollicitudin. Mauris euismod tincidunt rhoncus. Vestibulum nec magna leo. Cras placerat turpis vel mauris efficitur, sed suscipit velit pellentesque. Integer vitae tristique lectus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis vel posuere diam, accumsan ultricies ligula. Proin iaculis gravida erat, quis placerat erat pretium non. Sed a posuere eros. Pellentesque ultricies a dui at porta. Quisque tincidunt convallis dolor, in dapibus dolor pulvinar vitae.",
+                desc: "Saturday Skin Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellentesque arcu ipsum, eu posuere nulla gravida id. Nulla nec enim a arcu euismod sollicitudin. Mauris euismod tincidunt rhoncus. Vestibulum nec magna leo. Cras placerat turpis vel mauris efficitur, sed suscipit velit pellentesque. Integer vitae tristique lectus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis vel posuere diam, accumsan ultricies ligula.",
             },
             {
                 projects: [

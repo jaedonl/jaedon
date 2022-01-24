@@ -224,6 +224,7 @@ $medium: 900px;
         .workFooterCopyright {
             margin-top: 25px;
             text-align: center;
+            font-size: 12px;
         }
     }
 }
@@ -259,7 +260,7 @@ $medium: 900px;
                 .workDesc {
                     margin-top: 15px;
                     p {
-                        font-size: 16px;
+                        font-size: 14px;
                     }
                     .moreButton {
                         display: none;
@@ -301,12 +302,113 @@ $medium: 900px;
             margin: 50px 0 25px;
 
             .linkList {
-                display: block;
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
                 .linkItem {
-                    margin: 10px 0;
+                    margin: 10px 10px;
+                    font-size: 14px;
+                    .linkIcons {
+                        font-size: 30px;
+                    }
                 }
+            }
+
+            .workFooterCopyright {                
+                font-size: 12px;
             }
         }
     }
+}
+
+@media screen and (max-width: $medium) and (max-height: 450px) {
+    .workDetail {
+        padding: 0 25px;
+        .workAbout {
+            // padding-top: 100px;
+            .workhead {
+                .nextProject {
+                    display: flex;
+                }
+                .currentProject {
+                    h1 {
+                        font-size: 38px;
+                    }
+                    .tagAndAuthor {
+                        span {
+                            margin-right: 0;
+                            font-size: 14px;
+                        }
+                    }
+                }   
+            }
+
+            .workInfo {
+                grid-template-columns: 1fr;
+                margin-top: 25px;
+
+                .workDesc {
+                    margin-top: 15px;
+                    p {
+                        font-size: 16px;
+                    }
+                    .moreButton {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .moreWorks {
+            padding-top: 100px;
+            h1 {
+                font-size: 20px;
+            }
+
+            .workGrid {
+                margin-top: 15px;
+                grid-template-columns: 1fr 1fr;
+                row-gap: 30px;
+                column-gap: 25px;
+
+                .workItem {
+                    .projectPartTitle {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .prevNextProject {
+            margin-top: 50px;
+
+            .prevProject, .nextProject {
+                h3 {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .workFooter {
+            margin: 50px 0 25px;
+
+            .linkList {
+                display: flex;
+                align-items: center;
+
+                .linkItem {
+                    display: flex;
+                    align-items: center;
+                    margin: 0 15px;
+                }
+            }
+
+            .workFooterCopyright {
+                margin-top: 25px;
+                text-align: center;
+                font-size: 12px;
+            }
+        }
+    }    
 }

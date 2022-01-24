@@ -113,3 +113,33 @@ $medium: 900px;
 
     }
 }
+
+@media screen and (max-width: $medium) and (max-height: 450px) {
+    .about {    
+        height: auto;
+        padding: 100px 15px 0;
+        .myNameIs {
+            font-size: 20px;
+        }   
+        .mainName {
+            font-size: 48px;
+            letter-spacing: 3px;
+        }
+        .profileWrapper {
+            .avatarImg {
+                width: 150px;
+                height: 150px;
+            }
+            .positionTitle {
+                font-size: 20px;
+            }
+            .skills {
+                font-size: 14px;
+            }
+            .aboutMe {
+                font-size: 14px;
+            }
+        }
+
+    }    
+}
