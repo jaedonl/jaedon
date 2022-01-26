@@ -10,7 +10,10 @@ const About = () => {
                 <img src="/assets/jaedonAvatar.png" alt="Jaedon Avatar" className="avatarImg" />
                 <h2 className="positionTitle">Web Developer</h2>
                 <p className="skills">React.js / Shopify Liquid / Javascript / CSS</p>
-                <p className="aboutMe">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius quam urna, ac mollis felis rhoncus non. Aliquam volutpat ultrices ultrices. Nam tempor, nunc quis varius cursus, libero nulla convallis felis, id egestas libero leo eu dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum lorem lacus, a consectetur lacus interdum vitae.</p>                
+                <p className="aboutMe">
+                    I'm a front-end developer at Design Agency in Midtown, New York. 
+                    Web Developer with 2+ years of experience in designing and developing user interfaces, testing, debugging, and training staff within eCommerce technologies. Have always discussed and worked with designers to provide better UI/UX. Proven ability in optimizing web functionalities that improve data retrieval and workflow efficiencies.
+                </p>                         
             </div>
             
         </div>

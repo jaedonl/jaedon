@@ -8,7 +8,7 @@ export const workData = [
                 author: "Jaedon Lee",
                 inProgress: false,
                 info: "Shopify Ecommerce Store",
-                desc: "Saturday Skin Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellentesque arcu ipsum, eu posuere nulla gravida id. Nulla nec enim a arcu euismod sollicitudin. Mauris euismod tincidunt rhoncus. Vestibulum nec magna leo. Cras placerat turpis vel mauris efficitur, sed suscipit velit pellentesque. Integer vitae tristique lectus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis vel posuere diam, accumsan ultricies ligula.",
+                desc: "Saturday Skin is a cosmetic brand started in California. It's mother company is in South Korea, Seoul. My job in Saturday Skin project was building front-end part which was designed by our design team. We used Shopify as a sales platform, and Liquid, Javascript, and SCSS were used in this project.",
             },
             {
                 projects: [
@@ -86,7 +86,7 @@ export const workData = [
                 author: "Jaedon Lee",
                 inProgress: false,
                 info: "Design Agency",
-                desc: "CMYK Donec quis lectus vitae diam accumsan commodo. In scelerisque porta odio, ac auctor lectus pretium nec. Phasellus volutpat a leo ut semper. Nunc volutpat nisi sit amet maximus fringilla. Vestibulum ut ipsum felis. Curabitur sagittis ante pellentesque purus ultrices sollicitudin. Nullam ut rhoncus mauris. Maecenas pharetra libero mauris, a tempor ex dictum ac. Fusce faucibus sem ac sodales molestie."
+                desc: "CMYK is a design agency located in New York, Midtown. My job in this project was building front-end part which was designed by our design team. We used Javascript library, Vue.js as a main language."
             },
             {
                 projects: [
@@ -144,7 +144,7 @@ export const workData = [
                 author: "Jaedon Lee",
                 inProgress: false,
                 info: "Cosmetic Lab",
-                desc: "Chalogy Cras vestibulum non dolor pretium lobortis. Donec tempus posuere lacus, et fringilla velit gravida non. Curabitur ac vulputate tellus. Vestibulum accumsan ipsum lorem, a tempor felis tempus nec. Donec tempor nec velit et sagittis. Sed consequat venenatis augue. Aliquam eget justo et odio ultricies dignissim in sit amet nunc. Nunc nibh diam, consequat sit amet nulla sit amet, placerat vehicula enim. Donec magna diam, tempus sit amet quam ut, fermentum interdum turpis. Integer interdum molestie neque, eget dapibus mauris sodales quis. In hac habitasse platea dictumst. Sed hendrerit nec ipsum vel viverra. Maecenas nisl nibh, congue non justo vitae, blandit blandit quam. Ut leo libero, gravida vulputate facilisis sed, vehicula a libero. Sed ac nulla in neque molestie suscipit."
+                desc: "Chalogy is a cosmetic lab for women located in South Korea, Seoul. It's mother company of Saturday Skin brand. My job in this project was building front-end part which was designed by our design team. We used Javascript library, Vue.js as a main language."
             },
             {
                 projects: [
@@ -187,7 +187,7 @@ export const workData = [
                 author: "Jaedon Lee",
                 inProgress: true,
                 info: "Admin page for store (React.js)",
-                desc: " Admin Vestibulum felis neque, suscipit facilisis metus quis, fringilla porttitor massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam et orci ullamcorper, convallis nulla nec, vulputate velit. Phasellus molestie urna aliquam, ullamcorper mauris nec, maximus dui. Sed ac nisi sed nunc luctus vehicula. Aliquam mi mauris, luctus ut tristique at, rhoncus vel metus. Proin ullamcorper eros eu convallis pulvinar. In sollicitudin auctor metus, vel consectetur felis porttitor a. Cras semper, arcu eu mollis elementum, metus lectus lobortis justo, in pharetra dui felis non ipsum. Pellentesque pretium magna ac malesuada tempor."
+                desc: "Admin page project was made for my personal porfolio. I used MERN (MongoDB, Express, React, and Node.js) for this project with Basic CRUD Rest APIs. I tried to focused on the functionalities instead of the design."
             },
             {
                 projects: [
@@ -240,7 +240,7 @@ export const workData = [
                 author: "Jaedon Lee",
                 inProgress: true,
                 info: "Ecommerce Shop (React.js)",
-                desc: "Shop Phasellus suscipit ultrices leo non vehicula. Mauris luctus euismod massa vitae finibus. Aliquam tempor augue dictum cursus auctor. Nullam condimentum ornare ultrices. Donec et accumsan quam, vel tincidunt augue. Nulla eget lacinia est. Morbi sit amet laoreet mi. Morbi finibus diam ut turpis porttitor, id fringilla lacus sagittis."
+                desc: "Simple eCommerce shop page project was made for my personal porfolio. I used MERN (MongoDB, Express, React, and Node.js) for this project with Basic CRUD Rest APIs. I focused on the functionalities instead of the design."
             },
             {
                 projects: [
