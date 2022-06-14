@@ -12,6 +12,8 @@ const Works = () => {
                     workData.map((item, idx) => {                 
                         var project = item[Object.keys(item)][0]
 
+                        console.log(project.handle);
+
                         return <div className="work" key={idx}>
                                 <div className="workThumbContainer">
                                     <img src={ item[Object.keys(item)][1].projects[0].img } alt="" />

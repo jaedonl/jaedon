@@ -1,5 +1,62 @@
 export const workData = [
     {
+        "shopify-nextjs": [
+            {
+                title: "Shopify NextJs",
+                handle: "shopify-nextjs",
+                tags: ["Shopify", "NextJS", "Ecommerce", "Headless", "Frontend"],
+                author: "Jaedon Lee",
+                inProgress: false,
+                info: "Shopify with Next.js Store",
+                desc: "It is a dummy Next.js Ecommerce website using Shopify storefront API. Sample products in this websites are from RH.com. Didn't consider much about the design, but focused more to functionalities. User can upload their contents (products, article, collections, etc...) into their Shopify admin page and it will update the website.",
+            },
+            {
+                projects: [
+                    {
+                        id: 1,
+                        img: "/assets/projects/shopify_nextjs_home_thumb.jpg",                        
+                        part: "Homepage",                
+                    },
+                    {
+                        id: 2,
+                        img: "/assets/projects/shopify_nextjs_home_2_thumb.jpg",
+                        part: "Homepage 2",                
+                    },
+                    {
+                        id: 3,
+                        img: "/assets/projects/shopify_nextjs_collection_thumb.jpg",
+                        part: "Collection page",                
+                    },
+                    {
+                        id: 4,
+                        img: "/assets/projects/shopify_nextjs_collection_2_thumb.jpg",
+                        part: "Collection page 2",                
+                    },
+                    {
+                        id: 5,
+                        img: "/assets/projects/shopify_nextjs_product_thumb.jpg",
+                        part: "Product page",
+                    },
+                    {
+                        id: 6,
+                        img: "/assets/projects/shopify_nextjs_collection_2_thumb.jpg",
+                        part: "Product page 2", 
+                    },
+                    {
+                        id: 7,
+                        img: "/assets/projects/shopify_nextjs_cart_thumb.jpg",
+                        part: "Cart page", 
+                    },
+                    {
+                        id: 8,
+                        img: "/assets/projects/shopify_nextjs_search_thumb.jpg",
+                        part: "Search modal", 
+                    },                    
+                ],
+            }
+        ]
+    },
+    {
         "saturday-skin": [
             {
                 title: "Saturday Skin",
