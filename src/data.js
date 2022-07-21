@@ -1,5 +1,52 @@
-export const workData = [
-    {
+export const workData = [{   
+        "listing-nextjs": [
+            {
+                title: "Listing NextJs",
+                handle: "listing-nextjs",
+                tags: ["NextJS", "Listing", "Dashboard", "Frontend"],
+                author: "Jaedon Lee",
+                inProgress: false,
+                info: "Listing website built with Next.js",
+                desc: "It is a dummy Next.js listing website using MongoDB. Sample listings in this websites are from LinkedIn. Didn't consider much about the design, but focused more to functionalities.",
+            },
+            {
+                projects: [
+                    {
+                        id: 1,
+                        img: "/assets/projects/listing_nextjs_home_thumb.jpg",                        
+                        part: "Homepage",                
+                    },
+                    {
+                        id: 2,
+                        img: "/assets/projects/listing_nextjs_jobs_thumb.jpg",                        
+                        part: "Jobs",                
+                    },
+                    {
+                        id: 3,
+                        img: "/assets/projects/listing_nextjs_jobdetail_thumb.jpg",                        
+                        part: "Job detail",                
+                    },
+                    {
+                        id: 4,
+                        img: "/assets/projects/listing_nextjs_jobpost_thumb.jpg",                        
+                        part: "Post modal",                
+                    },
+                    {
+                        id: 5,
+                        img: "/assets/projects/listing_nextjs_login_thumb.jpg",                        
+                        part: "Login",                
+                    },
+                    {
+                        id: 6,
+                        img: "/assets/projects/listing_nextjs_account_thumb.jpg",                        
+                        part: "Account",                
+                    },
+            
+                ],
+            }
+        ]
+    },
+    {   
         "shopify-nextjs": [
             {
                 title: "Shopify NextJs",
